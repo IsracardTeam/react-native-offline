@@ -115,19 +115,10 @@ const withNetworkConnectivity = (
       // Top most component, syncing with store
       if (
         typeof store === 'object' &&
-        typeof store.dispatch === 'function' &&
-        withRedux === true
+        typeof store.dispatch === 'function'
       ) {
-        const actionQueue = store.getState().network.actionQueue;
-
-        if (isConnected !== store.getState().network.isConnected) {
+        if (isConnected !== store.getState().NetworkReducer.isConnected) {
           store.dispatch(connectionChange(isConnected));
-        }
-        // dispatching queued actions in order of arrival (if we have any)
-        if (isConnected && actionQueue.length > 0) {
-          actionQueue.forEach((action: *) => {
-            store.dispatch(action);
-          });
         }
       } else {
         // Standard HOC, passing connectivity as props
