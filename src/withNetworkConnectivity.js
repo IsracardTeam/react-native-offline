@@ -117,9 +117,9 @@ const withNetworkConnectivity = (
         typeof store === 'object' &&
         typeof store.dispatch === 'function'
       ) {
-        if (isConnected !== store.getState().NetworkReducer.isConnected) {
+        //if (isConnected !== store.getState().NetworkReducer.isConnected) {
           store.dispatch(connectionChange(isConnected));
-        }
+        //}
       } else {
         // Standard HOC, passing connectivity as props
         this.setState({ isConnected });
