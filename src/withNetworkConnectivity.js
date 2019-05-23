@@ -2,7 +2,9 @@
 
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
-import { NetInfo, Platform } from 'react-native';
+import { Platform } from 'react-native';
+import NetInfo from "@react-native-community/netinfo";
+
 import hoistStatics from 'hoist-non-react-statics';
 import { connectionChange } from './actionCreators';
 import reactConnectionStore from './reactConnectionStore';
