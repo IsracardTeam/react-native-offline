@@ -2,7 +2,9 @@
 
 import { Component } from 'react';
 import PropTypes from 'prop-types';
-import { NetInfo, Platform } from 'react-native';
+import NetInfo from "@react-native-community/netinfo";
+
+import { Platform } from 'react-native';
 import checkInternetAccess from './checkInternetAccess';
 import reactConnectionStore from './reactConnectionStore';
 
